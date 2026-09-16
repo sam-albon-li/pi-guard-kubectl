@@ -1,0 +1,4 @@
+node_modules/
+.build/
+PLAN.md
+.pi-subagents/

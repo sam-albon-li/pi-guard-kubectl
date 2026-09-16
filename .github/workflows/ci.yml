@@ -1,0 +1,28 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+# The unit suite has zero dependencies: Node >= 22.19 executes TypeScript
+# natively (type stripping), so no install or build step is needed.
+#
+# The e2e suite (test/e2e.sh) is intentionally not run here: it drives real
+# headless pi sessions and requires a configured default model with
+# credentials, which are not available in CI for this public repository.
+jobs:
+  unit-tests:
+    name: unit tests (node ${{ matrix.node-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Run unit tests
+        run: npm test

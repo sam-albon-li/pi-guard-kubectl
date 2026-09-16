@@ -1,0 +1,28 @@
+{
+  "name": "pi-guard-kubectl",
+  "version": "1.0.0",
+  "description": "Pi extension that blocks kubectl modification commands without explicit permission",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "test": "node --test test/extension.test.ts",
+    "test:e2e": "bash test/e2e.sh"
+  },
+  "keywords": [
+    "pi-package"
+  ],
+  "files": [
+    "index.ts"
+  ],
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}
