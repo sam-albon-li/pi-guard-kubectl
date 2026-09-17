@@ -1,3 +1,5 @@
+[![ci](https://github.com/sam-albon-li/pi-guard-kubectl/actions/workflows/ci.yml/badge.svg)](https://github.com/sam-albon-li/pi-guard-kubectl/actions/workflows/ci.yml)
+
 # pi-guard-kubectl
 
 Pi extension that blocks kubectl modification commands without explicit permission.
